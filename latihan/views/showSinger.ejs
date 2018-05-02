@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+
+  <% include ./partial/head %>
+
+</head>
+
+<body>
+
+  <div class="container">
+  <% include ./partial/header%>
+    <h2>Data Singer</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th> Name </th>
+          <th> Song </th>
+          <th> Action </th>
+        </tr>
+      </thead>
+      <tbody>
+        <% dataSinger.forEach(function(singers){ %>
+          <tr>
+            <td>
+              <%= singers.id%>
+            </td>
+            <td>
+              <%= singers.name%>
+            </td>
+            <td>
+            <%= data.cekKosong(singers)%>
+            </td>
+            <td> <a href="/singers/edit/<%= singers.id %>">Edit</a> | <a href="/singers/delete/<%= singers.id %>"> Delete</a> </td>
+          </tr>
+          <%  })%>
+      </tbody>
+    </table>
+  </div>
+
+</body>
+<footer>
+  <% include ./partial/footer%>
+</footer>
+</html>

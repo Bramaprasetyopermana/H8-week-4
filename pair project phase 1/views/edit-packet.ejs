@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Packet</title>
+</head>
+<body>
+  <h1>Edit Packet</h1>
+  
+  <form action="/packets/<%= dataPacket.id%>/edit" method="POST">
+    Packet Name:<br>
+    <input type="text" name="name" value="<%= dataPacket.name %>">
+    <br>
+    Menu 1:<br>
+      <select name="menu1">
+        <% dataMenus.forEach(dataMenu => {%>
+        <option value="<%= dataMenu.id %>"><%= dataMenu.name %></option>
+        <%})%>
+      </select>
+    <br>
+    Menu 2:<br>
+     <select name="menu2">
+        <% dataMenus.forEach(dataMenu => {%>
+        <option value="<%= dataMenu.id %>"><%= dataMenu.name %></option>
+        <%})%>
+      </select>
+    <br>
+    Menu 3:<br>
+    <select name="menu3">
+        <% dataMenus.forEach(dataMenu => {%>
+        <option value="<%= dataMenu.id %>"><%= dataMenu.name %></option>
+        <%})%>
+      </select>
+      <br><br>  
+    <input type="submit" value="submit">  
+  </form>
+
+  <p><a href="/packets">back</a></p>   
+</body>
+</html>
+

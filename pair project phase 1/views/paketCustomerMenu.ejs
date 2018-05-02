@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <title>Homepage</title>
+  <h6><a href="/logout" method= "POST">Sign Out</a></h6>
+</head>
+
+<body class="container">
+  <table id="t01" class="table">
+    <tr>
+      <th> Packet List</th>
+      <th> Calories</th>
+      <th> Price</th>
+      <th> View Menu </th>
+      <th>  Action </th>
+
+    </tr>
+    <%function countCalories(arrayMenus) {%>
+     <%let total = 0%>
+  <%arrayMenus.forEach(menu => {%>
+    <%total += menu.calories%>
+  <%})%>
+  <%return total%>
+<%}%>
+
+ <%function countPrice(arrayMenus) {%>
+     <%let total = 0%>
+  <%arrayMenus.forEach(menu => {%>
+    <%total += menu.price%>
+  <%})%>
+  <%return total%>
+<%}%>
+    <% let total1 = 0%>
+    <% let total = 0%>
+    <% for(var i=0;i<dataPackets.length;i++) {%>
+    <tr>
+      <td> <%=dataPackets[i].name%> </td>
+
+       
+     
+      <td><%=countCalories(dataPackets[i].Menus) %></td>
+
+
+      <td><%=countPrice(dataPackets[i].Menus) %></td>
+      <td> <a href="/customer/packet/<%= dataPackets[i].id%>/view">View</a> </td>
+      
+      <%if(countCalories(dataPackets[i].Menus) < `${dataCustomer.BMR}`) { %>
+        <td> <a href="/customer/<%= customerId%>/packet/<%= dataPackets[i].id%>">Buy  </a></td>
+        <%}else{%>
+          <td>Buy</td>
+        <%}%>     
+    </tr>
+    <%}%>
+  </table>
+</body>
+
+</html>

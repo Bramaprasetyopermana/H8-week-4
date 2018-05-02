@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <title></title>
+</head>
+
+<body class="container">
+  <table id="t01" class="table">
+    <tr>
+      <th>Menu</th>
+      <th>Calories</th>
+    </tr>
+
+  <%dataPacket.Menus.forEach(menu=>{ %>
+    <tr>
+    <td><%=menu.name %></td><br>
+    <td><%=menu.calories%> </td>
+    </tr>
+    <%})%>
+  </table>
+</body>
+
+</html>

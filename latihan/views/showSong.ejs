@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+<% include ./partial/head%>
+</head>
+
+<body>
+
+  <div class="container">
+    <% include ./partial/header%>
+    <h1>Data Song</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th> Title </th>
+          <th> Action </th>
+        </tr>
+      </thead>
+      <tbody>
+        <% songs.forEach(function(dataSong){ %>
+          <tr>
+            <td>
+              <%= dataSong.id%>
+            </td>
+            <td>
+              <%= dataSong.title%>
+            </td>
+            <td> <a href="#">Edit</a> | <a href="#"> Delete</a> </td>
+          </tr>
+          <%  })%>
+      </tbody>
+    </table>
+  </div>
+
+</body>
+
+</html>

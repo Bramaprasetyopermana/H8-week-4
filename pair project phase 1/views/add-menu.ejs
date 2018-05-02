@@ -1,0 +1,27 @@
+<% include('./partials/header.ejs') %>
+
+<h2>Add Menu</h2>
+<a href="/menus"> Show All Data </a>
+
+<form action="/menus/add" method = 'POST'>
+  Name<br>
+  <input type="text" name="name" value="" placeholder="Enter food's name">
+  <br>
+  Calories<br>
+  <input type="text" name="calories" value="" placeholder="Enter food's calories">
+  <br>
+  Price<br>
+  <input type="text" name="price" value="" placeholder="Enter food's price">
+  <br><br>
+  <input type="submit" value="Submit" class="btn btn-success">
+</form> 
+
+<p>Note :</p>
+<ul>
+    <li>Food name should filled with different name from existing one</li>
+    <li>Price and Calories should only contains numbers</li>
+</ul>
+
+</body>
+
+<% include('./partials/footer.ejs') %>

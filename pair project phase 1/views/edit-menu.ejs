@@ -1,0 +1,27 @@
+<% include('./partials/header.ejs') %>
+
+<h2>Edit Menu</h2>
+<a href="/menus"> Show All Data </a>
+
+<form action="/menus/edit/<%= menu.id %>" method = 'POST'>
+  Name<br>
+  <input type="text" name="name" value="<%= menu.name %>" >
+  <br>
+  Calories<br>
+  <input type="text" name="calories" value="<%= menu.calories %>" >
+  <br>
+  Price<br>
+  <input type="text" name="price" value="<%= menu.price %>" >
+  <br><br>
+  <input type="submit" value="Submit" class="btn btn-success">
+</form> 
+
+<p>Note :</p>
+<ul>
+    <li>Food name should filled with different name from existing one</li>
+    <li>Price and Calories should only contains numbers</li>
+</ul>
+
+</body>
+
+<% include('./partials/footer.ejs') %>

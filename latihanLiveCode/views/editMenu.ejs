@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>editMenu</title>
+  </head>
+  <body>
+    <div class="container">
+      <form action="/menus/<%=menuId.id%>/edit" method="post">
+        <label>Name</label>
+        <input type="text" name="name" value="<%= menuId.name %>"><br>
+        <label> Menu Type</label>
+        <input type="text" name="menu_type" value="<%= menuId.menu_type%>"><br>
+        <label>Rating</label>
+        <input type="text" name="rating" value="<%= menuId.rating%>"><br>
+        <label>Price</label>
+        <input type="text" name="price" value="<%= menuId.price%>"><br>
+        <input type="submit" name="" value="submit">
+      </form>
+    </div>
+  </body>
+</html>

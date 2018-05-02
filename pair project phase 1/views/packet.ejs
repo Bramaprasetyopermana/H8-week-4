@@ -1,0 +1,42 @@
+<%- include('./partials/header.ejs') %>
+<style>
+	table {
+		font-family: arial, sans-serif;
+		border-collapse: collapse;
+		width: 100%;
+	}
+	
+	td, th {
+		border: 1px solid #dddddd;
+		text-align: left;
+		padding: 8px;
+	}
+	
+	tr:nth-child(even) {
+		background-color: #dddddd;
+	}
+	</style>
+<body>
+	<h1>Packet List</h1>
+	<p><a href= "/packets/addPacket">Add Packet</a></p>
+	<table>
+  		<tr>
+    		<th>Nama Paket</th>
+    		<th>Total Kalori</th>
+    		<th>Option</th>
+        
+
+  		</tr>
+  			<% for(var i=0; i < Menu_Packet.length; i++) { %>
+  		<tr>
+   			<td><%= Menu_Packet[i].name %></td>
+   			<td><%= calories_Counter(Menu_Packet[i].Menus) %></td>
+        <td><a href="/packets/<%=Menu_Packet[i].id %>/edit">Edit</a>||<a href="/packets/<%=Menu_Packet[i].id%>/delete" onclick="return confirm('delete this packet?')">Delete</a>
+
+  		</tr>
+  			<% } %>
+</table>
+	<p><a href="/admin/database">back</a></p>		
+</body>
+<%- include('./partials/footer.ejs') %>
+

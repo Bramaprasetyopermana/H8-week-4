@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title> Live Code </title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+</head>
+
+<body>
+
+  <div class="container">
+    <h2>List Menu</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th> Name </th>
+          <th> Menu Type </th>
+          <th> Rating </th>
+          <th> Price </th>
+          <th> Restaurant </th>
+          <th> Action </th>
+        </tr>
+      </thead>
+      <tbody>
+        <% listMenu.forEach(function(menu){ %>
+          <tr>
+            <td>
+              <%= menu.id %>
+            </td>
+            <td>
+              <%= menu.name %>
+            </td>
+            <td>
+              <%= menu.menu_type %>
+            </td>
+            <td>
+              <%= menu.rating %>
+            </td>
+            <td>
+              <%= helper.addIdr(menu) %>
+            </td>
+            <td>
+              <%= menu.Restaurant.name%>
+            </td>
+            <td> <a href="/menus/<%= menu.id%>/edit">Edit</a> | <a href="/menus/<%= menu.id%>/delete">Delete</a> </td>
+          </tr>
+          <%  })%>
+      </tbody>
+    </table>
+  </div>
+  <div class="container">
+    <form action="/menus" method="post">
+      <label>Name</label>
+      <input type="text" name="name"><br>
+      <label> Menu Type</label>
+      <input type="text" name="menu_type"><br>
+      <label>Rating</label>
+      <input type="text" name="rating"><br>
+      <label>Price</label>
+      <input type="text" name="price"><br>
+      <input type="submit" name="" value="submit">
+    </form>
+  </div>
+
+</body>
+<footer>
+</footer>
+
+</html>

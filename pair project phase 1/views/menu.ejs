@@ -1,0 +1,42 @@
+<%- include('./partials/header.ejs') %>
+<body>
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+<h2>Menu Table</h2>
+<a href="/menus/add"> Add Menu </a>
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Calories</th>
+    <th>Price</th>
+    <th>Options</th>
+  </tr>
+  <% menus.forEach(menu => {%>
+  <tr>
+    <td><%= menu.id %></td>
+    <td><%= menu.name %></td>
+    <td><%= menu.calories %></td>
+    <td><%= menu.price %></td>
+    <td><a href = '/menus/edit/<%=menu.id%>'>Edit <a> | <a href="/menus/delete/<%=menu.id%>" onclick="return confirm('delete this data?')"> Delete </a> </td>
+  </tr>
+  <% }) %>
+</table>
+
+</body>
+<%- include('./partials/footer.ejs') %>
